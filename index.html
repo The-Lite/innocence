@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+    <link href=”./output.css” rel=”stylesheet”>
+    <link href=”./style.css” rel=”stylesheet”>
+    <title>Innocence</title>
+</head>
+<body>
+    <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+          <div>
+            <img class="mx-auto h-12 w-auto" src="Logo.png" alt="Workflow">
+            <h3 class=" sm mt-6 text-center text-3md font-extrabold text-gray-900">
+                REMPLISSEZ LE FORMULAIRE S'IL VOUS PLAÎT
+            </h2>
+            
+          </div>
+          <form class="mt-8 space-y-6 gap-4 flex flex-col" action="#" id="form" onsubmit="sendToSib()" method="POST">
+            <input type="hidden" name="remember" value="true">
+            <div class="rounded-md shadow-sm -space-y-px  gap-6 flex flex-col">
+              <div>
+                <label for="date">La date</label>
+                <input id="date" name="date" type="date" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+              </div>
+              <div>
+                <label for="time">L'heure</label>
+                <input id="time" name="time" type="time" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+              </div>
+              <div>
+                <label for="Ou">Ou</label>
+                <input id="Ou" name="Ou" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Ou exactement">
+              </div>
+              <div class="gap-2 flex flex-col">
+                  <label>Avez vous herceler Varblament ou Physiquement</label>
+                <select type="text" name="type_herc" id="type_herc" placeholder="Car Type" class="my-2 px-4 py-3 border rounded-lg text-black-primary focus:outline-none text-sm w-full">
+                    
+                    <option class="text-gray-400" value="test"  disabled>Select your option</option>
+                    <option value="Physiquement">Physiquement</option>
+                    <option value="Varblament">Varblament</option>
+                    
+                 </select>
+                 <div class="gap-2 flex flex-col">
+                    <label for="detail">Que t'est-il arrivé exactement ?</label>
+                    <input id="detail" name="detail" type="textarea" required class="appearance-none  h-96 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="">
+                  </div>
+                  <div >
+                    <div class="gap-2 flex flex-col" >
+                        <label>Quel est l'endroit exact où vous avez été harcelé?
+                        </label>
+                      <select type="text" name="place_exct" id="place_exct" placeholder="Car Type" class="my-2 px-4 py-3 border rounded-lg text-black-primary focus:outline-none text-sm w-full">
+                          
+                          <option class="text-gray-400" value=""  disabled selected>Select your option</option>
+                          <option value="Rue">Rue</option>
+                          <option value="Transport">Transport</option>
+                          <option value="Parc">Parc</option>
+                          <option value="Endroit public">Endroit public</option>
+                          <option value="Endroit privé">Endroit privé</option>
+                          
+                       </select>
+                       <div>   
+            </div>
+            </div>
+      
+            
+      
+            <div>
+              <button type="submit" id="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" style="background-color:#D13F94 !important;">
+                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                  <!-- Heroicon name: solid/lock-closed -->
+                  
+                </span>
+                Envoyer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+     
+        <div id="note" class=" hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <!--
+                Background overlay, show/hide based on modal state.
+          
+                Entering: "ease-out duration-300"
+                  From: "opacity-0"
+                  To: "opacity-100"
+                Leaving: "ease-in duration-200"
+                  From: "opacity-100"
+                  To: "opacity-0"
+              -->
+              <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+          
+              <!-- This element is to trick the browser into centering the modal contents. -->
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+          
+              <!--
+                Modal panel, show/hide based on modal state.
+          
+                Entering: "ease-out duration-300"
+                  From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                  To: "opacity-100 translate-y-0 sm:scale-100"
+                Leaving: "ease-in duration-200"
+                  From: "opacity-100 translate-y-0 sm:scale-100"
+                  To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              -->
+              <div class="  inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"  >
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div class="sm:flex sm:items-start">
+                    <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                      <!-- Heroicon name: outline/exclamation -->
+                      <img src="Logo.png">
+                    </div>
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                      <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                        Message Envoyé
+                      </h3>
+                      <div class="mt-2">
+                        <p class="text-sm text-gray-500">
+                            Votre formulaire a été envoyé au personnel qui l’examinera et vous
+                            répondra dans les plus brefs délais
+                            Merci !
+                            
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                  <a type="button" href="index.html" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-pink-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                   OK
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+      
+       
+    
+     </div>
+
+
+
+      
+</body>
+<script src="main.js"></script>
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+    </script>
+</html>

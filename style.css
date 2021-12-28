@@ -1,0 +1,15 @@
+    
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.done
+{
+    display: block;
+}
+.note_done
+{
+    display: none;
+}
