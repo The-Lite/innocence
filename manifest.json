@@ -3,7 +3,6 @@
     "background_color": "#D13F94",
     "display": "standalone",
     "scope": "https://the-lite.github.io/",
-    "id":"/innocence",
     "start_url": "/innocence",
     "name": "Innocence",
     "short_name": "Org",
