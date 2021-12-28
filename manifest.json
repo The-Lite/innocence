@@ -2,7 +2,7 @@
     "theme_color": "#D13F94",
     "background_color": "#D13F94",
     "display": "standalone",
-    "scope": "",
+    "scope": "/innocence",
     "start_url": "/innocence",
     "name": "Innocence",
     "short_name": "Org",
