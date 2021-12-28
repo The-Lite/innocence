@@ -3,7 +3,7 @@
     "background_color": "#D13F94",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/innocence",
     "name": "Innocence",
     "short_name": "Org",
     "icons": [
